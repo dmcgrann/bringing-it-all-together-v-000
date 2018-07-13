@@ -31,7 +31,7 @@ class Dog
       INSERT INTO dogs (name, breed) VALUES (?,?), name, breed
     SQL
     
-    DB[:conn].execute(sql, self.name, self.breed)
+    row = DB[:conn].execute(sql, self.name, self.breed)
     @id = DB[:conn].execute("SELECT last_insert_rowid() FROM dogs")[0][0]
   end
   
