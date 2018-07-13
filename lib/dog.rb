@@ -44,4 +44,14 @@ class Dog
     dog
   end
   
+  ef self.find_by_id(id)
+    sql = <<-SQL
+      SELECT * FROM dogs WHERE id = ? LIMIT 1
+    SQL
+
+    results = DB[:conn].execute(sql, id).flatten
+
+    Post.new_from_db(results)
+  end
+  
 end
