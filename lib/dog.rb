@@ -67,7 +67,7 @@ class Dog
     self.new.tap do |dog|
       dog.title = row[1]
       dog.body = row[2]
-      post.send("id=", row[0])
+      dog.send("id=", row[0])
     end
   end
   
