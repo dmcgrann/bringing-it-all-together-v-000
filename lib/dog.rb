@@ -39,8 +39,9 @@ class Dog
   end
   
   def self.create(attrs = {})
-    attrs.each do |k,v|
-      self.send "#{k}=", v 
+    dog = attrs.each do |k,v|
+      self.send "#{k}=", v
+      dog
     end
   end
   
