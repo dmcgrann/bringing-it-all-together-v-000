@@ -63,12 +63,10 @@ class Dog
     end
   end
   
-  def self.new_from_db(row)
-    self.new.tap do |dog|
-      dog.name = row[1]
-      dog.breed = row[2]
-      dog.send("id=", row[0])
-    end
+  def self.new_from_db(name:, breed:)
+    dog = DB[:conn].execute("SELECT * FROM dogs WHERE name = ? AND breed = ?", name, breed)
+    dog.new(name: name, breed: breed)
+    dog
   end
   
  
