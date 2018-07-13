@@ -30,7 +30,7 @@ class Dog
     sql = <<-SQL 
       INSERT INTO dogs (name, breed) VALUES (?,?), name, breed
     SQL
-    
+    DB[:conn].execute(sql)
     
   end
   
