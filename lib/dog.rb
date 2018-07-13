@@ -42,5 +42,6 @@ class Dog
     dog = DOG.new(name: dog[1], breed: dog[2])
     dog.save
     dog
+  end
   
 end
