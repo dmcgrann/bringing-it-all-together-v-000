@@ -38,11 +38,10 @@ class Dog
     
   end
   
-  def self.create(attrs = {})
-    dog = attrs.each do |k,v|
-      self.send "#{k}=", v
-      dog
-    end
+  def self.create(name:, breed:)
+    dog = self.new(name: name, breed: breed)
+    dog.save
+    dog
   end
   
 end
