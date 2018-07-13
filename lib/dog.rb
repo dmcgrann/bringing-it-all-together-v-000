@@ -38,4 +38,7 @@ class Dog
     
   end
   
+  def self.create(name, breed)
+    dog = DOG.new()
+  
 end
