@@ -30,7 +30,8 @@ class Dog
     sql = <<-SQL 
       INSERT INTO dogs (name, breed) VALUES (?,?), name, breed
     SQL
-    DB[:conn].execute(sql)
+    DB[:conn].execute(sql, self.name, self.breed)
+    @id =
     
   end
   
