@@ -64,8 +64,10 @@ class Dog
   end
   
   def self.new_from_db(row)
-    new_dog = row.map {|x| Dog.new(x[:id], x[:name], x[:breed])}
-    
+    id = row[0]
+    name = row[1]
+    breed = row[2]
+    dog.new(id: id, name: name, breed: breed)
   end
   
  
