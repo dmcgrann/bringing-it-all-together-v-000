@@ -63,7 +63,15 @@ class Dog
     end
   end
   
-  def self.new_from_db
+  def self.new_from_db(row)
+    self.new.tap do |dog|
+      dog.title = row[1]
+      dog.body = row[2]
+      post.send("id=", row[0])
+    end
+  end
+  
+ 
     
     
   
