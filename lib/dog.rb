@@ -49,7 +49,8 @@ class Dog
       SELECT * FROM dogs WHERE id = ? LIMIT 1
     SQL
 
-    results = DB[:conn].execute(sql, id).flatten
+    result = DB[:conn].execute(sql, id)[0]
+    Dog.new(result[0], result[1], result[2])
 
     
   end
